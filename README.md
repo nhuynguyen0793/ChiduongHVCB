@@ -1,25 +1,28 @@
-# 🎈 Blank app template
+# Chỉ đường Học viện
 
-A simple Streamlit app template for you to modify!
+Ứng dụng chỉ đường trong khuôn viên Học viện, chạy bằng Streamlit. Giao diện HTML/CSS/JavaScript được lưu trong `app.html` và hiển thị qua component của Streamlit.
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+## Chạy trên máy cá nhân
 
-### How to run it on your own machine
+Yêu cầu Python 3.13 trở lên. Có thể chạy bằng `uv`:
 
-Prerequisite: install `uv` if you don't already have it.
-
+```bash
+uv sync
+uv run streamlit run streamlit_app.py
 ```
-$ curl -LsSf https://astral.sh/uv/install.sh | sh
+
+Hoặc cài dependencies bằng pip:
+
+```bash
+pip install -r requirements.txt
+streamlit run streamlit_app.py
 ```
 
-1. Sync the dependencies
+## Deploy lên Streamlit Community Cloud
 
-   ```
-   $ uv sync
-   ```
+1. Đẩy repository lên GitHub.
+2. Vào [Streamlit Community Cloud](https://share.streamlit.io/) và chọn **Create app**.
+3. Chọn repository, branch cần deploy và đặt **Main file path** là `streamlit_app.py`.
+4. Trong **Advanced settings**, chọn Python 3.13 trở lên nếu được yêu cầu, rồi chọn **Deploy**.
 
-2. Run the app
-
-   ```
-   $ uv run streamlit run streamlit_app.py
-   ```
+Giữ `streamlit_app.py`, `app.html` và `requirements.txt` trong cùng repository. Nếu sửa giao diện, cập nhật `app.html`; không dán trực tiếp HTML vào file Python.
