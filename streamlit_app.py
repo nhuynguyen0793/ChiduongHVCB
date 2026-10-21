@@ -28,6 +28,8 @@ st.markdown(
         display: block;
         width: 100%;
         height: 100vh !important;
+        height: 100dvh !important;
+        min-height: 320px;
         border: 0;
     }
     </style>
