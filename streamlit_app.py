@@ -9,6 +9,32 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
+st.markdown(
+    """
+    <style>
+    [data-testid="stHeader"],
+    [data-testid="stToolbar"],
+    footer {
+        display: none;
+    }
+
+    [data-testid="stAppViewContainer"] .main,
+    [data-testid="stAppViewContainer"] .main .block-container {
+        padding: 0;
+        max-width: none;
+    }
+
+    iframe[title="Bản đồ chỉ đường Học viện"] {
+        display: block;
+        width: 100%;
+        height: 100vh !important;
+        border: 0;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 st.iframe(
     Path(__file__).with_name("app.html"),
     height=900,
